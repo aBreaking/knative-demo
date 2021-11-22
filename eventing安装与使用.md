@@ -1,5 +1,3 @@
-knative1.0版本初探（二）——eventing安装与使用
-
 # Eventing简述
 
 Knative Eventing充当架构不同部分之间的`glue（粘合剂）`，使得你应用架构不同部分之间可以轻松进行通信，并具备较好的容错（fault-tolerant）等特性。一些使用场景例子如下：
@@ -19,7 +17,7 @@ Knative Eventing充当架构不同部分之间的`glue（粘合剂）`，使得�
 
 其关系图如下：
 
-![image-20211116151452805](C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20211116151452805.png)
+![image-20211116151452805](https://blog.abreaking.com/upload/2021/11/r1sd62c1imjeqrkrv72b71bphl.png)
 
 
 
@@ -151,7 +149,7 @@ example-broker   http://broker-ingress.knative-eventing.svc.cluster.local/defaul
 
 官方提供了一个简单的有可视化页面的CloudEvents Player，可以学习Knative Eventing的一些核心概念。其体系结构图如下：
 
-![image-20211117164345812](C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20211117164345812.png)
+![image-20211117164345812](https://blog.abreaking.com/upload/2021/11/ro9gh4d170gh1rcqlp6jab61h2.png)
 
 创建一个CloudEvents Player服务，创建一个yml，名为`cloudevents-player.yaml`，内容如下：
 
@@ -191,7 +189,7 @@ cloudevents-player   http://cloudevents-player.default.10.103.151.219.sslip.io  
 
 如上，我们看到了一个url，直接在浏览器中打开该url，效果如下：
 
-![image-20211117164904989](C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20211117164904989.png)
+![image-20211117164904989](https://blog.abreaking.com/upload/2021/11/pvhblbdnkci6vor58bdd3gn3bb.png)
 
 随便输入，你会发现`status`总是`>`箭头符号。它表示我们指定一个事件源，但是没有被接收。
 
@@ -237,7 +235,7 @@ cloudevents-trigger   example-broker   http://cloudevents-player.default.svc.clu
 
 然后，再次进入cloudevents-player页面，刷新一下，重新创建一个event，你会发现多了一条。
 
-![image-20211117165617343](C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20211117165617343.png)
+![image-20211117165617343](https://blog.abreaking.com/upload/2021/11/pj5f1fsoauhlcoo10otlimltdu.png)
 
 
 
@@ -254,4 +252,3 @@ Status为`√`表示事件已经被正常的接收了。
 [https://knative.dev/docs/install/eventing/install-eventing-with-yaml/](https://knative.dev/docs/install/eventing/install-eventing-with-yaml/)
 
 [https://knative.dev/docs/getting-started/getting-started-eventing/](https://knative.dev/docs/getting-started/getting-started-eventing/)
-
